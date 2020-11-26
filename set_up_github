@@ -1,0 +1,25 @@
+How to set up an enviroment for developing a package in R
+
+
+1. Step 1
+
+Creat new projects within R studio (with option creat a github repertory)
+
+2. Step 2
+
+Get auth_token from GITHUB
+
+3. Step 3
+In R Console, type
+
+edit_r_environment()
+TOKEN_PAT = 'insert_auth_token_here'
+
+Save file, Restart Rstudio
+
+Then setup auth_token in R console by:
+
+usethis::use_github((protocol = 'https', auth_token = Sys.getenv('GITHUB_PAT'))
+
+
+Use 'git config --global credential.helper wincred' if occurre the following error message ' 'credential-osxkeychainit' is not a git command. See 'git --help''
